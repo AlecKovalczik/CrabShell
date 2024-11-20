@@ -1,0 +1,2 @@
+# Ignore VS code config files used for c compilation
+.vscode/*
