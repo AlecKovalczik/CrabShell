@@ -5,5 +5,5 @@
 // pid_t fork(void);
 
 // command loop base functions
-char *readLine(void);
+char* readLine(void);
 void commandLoop(void);
