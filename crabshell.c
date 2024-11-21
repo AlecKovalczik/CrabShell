@@ -1,5 +1,6 @@
 #include "crabshell.h"
 
+#include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -11,7 +12,16 @@ int launch(char **args)
     pid_t pid, wpid;
     int status;
 
-    // pid = fork();
+    // STARTUPINFO si;
+    // PROCESS_INFORMATION pi;
+
+    // ZeroMemory( &si, sizeof(si) );
+    // si.cb = sizeof(si);
+    // ZeroMemory( &pi, sizeof(pi) );
+
+    // pid = fork(); // fork doesn't work on Windows
+    // https://learn.microsoft.com/en-us/windows/win32/procthread/creating-processes
+    // pid = CreateProcess(NULL, args[0], NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi);
 }
 
 #define READ_LINE_BUFSIZE 1024

@@ -18,5 +18,5 @@ I created this file to keep track of all of the things I learned throughout the 
     - I managed to get the `unistd.h` by using the gcc as a part of [MinGW](https://www.mingw-w64.org/). But this version of `unistd.h` doesn't provided an implementation of `fork`. 
 
 # References
-https://brennan.io/2015/01/16/write-a-shell-in-c/
+https://brennan.io/2015/01/16/write-a-shell-in-c/ </br>
 https://igupta.in/blog/writing-a-unix-shell-part-1/
