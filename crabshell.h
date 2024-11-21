@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-// pid_t fork(void);
+int launch(char** args);
 
 // command loop base functions
 char* readLine(void);

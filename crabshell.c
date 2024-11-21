@@ -1,8 +1,18 @@
 #include "crabshell.h"
 
-// pid_t fork(){
-//     // fork a child process off of the main thread.
-// }
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+// Fork a child process off of a parent process.
+int launch(char **args)
+{
+    // fork a child process off of the parent process.
+    pid_t pid, wpid;
+    int status;
+
+    // pid = fork();
+}
 
 #define READ_LINE_BUFSIZE 1024
 
@@ -67,14 +77,17 @@ char **splitLine(char *line)
     }
 
     token = strtok(line, SPLIT_LINE_DELIM);
-    while (token != NULL) {
+    while (token != NULL)
+    {
         tokens[position] = token;
         position++;
 
-        if (position >= bufsize) {
+        if (position >= bufsize)
+        {
             bufsize += SPLIT_LINE_BUFSIZE;
-            tokens = realloc(tokens, bufsize* sizeof(char*));
-            if (!tokens){
+            tokens = realloc(tokens, bufsize * sizeof(char *));
+            if (!tokens)
+            {
                 fprintf(stderr, "crabshell: allocation error\n");
                 exit(EXIT_FAILURE);
             }
@@ -109,7 +122,8 @@ void commandLoop()
         // }
         args = splitLine(line);
         int index = 0;
-        while (args[index] != NULL){
+        while (args[index] != NULL)
+        {
             printf("%s\n", args[index++]);
         }
         // status = execute(args);
